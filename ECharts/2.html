@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ECharts No.2 - IFE 2017</title>
+	 <script src="js/echarts.common.min.js"></script>
+</head>
+<body>
+	 <div id="main" style="width: 600px;height:400px;"></div>
+	 <script type="text/javascript">
+	 	var myChart = echarts.init(document.getElementById('main'));
+	 	var option={
+            backgroundColor:'#d7e4eb',
+             grid: {
+                left: '3%',
+                right: '4%',
+                top:'20%',
+                bottom: '3%',
+                containLabel: true
+            },
+	 		title: {
+                text: "What's my credit score",
+                subtext:"Puerto Rico, % decrease on a year earlier",
+                subtextStyle:{color:'#55585a'},
+                itemGap:-10,
+                left:'3%'
+            },
+            color:['#33748a','#33b6e3'],
+            legend:{
+                data:['Population','GDP'],
+                left:'3%',
+                top:'12%'
+            },
+            tooltip: {},
+            xAxis: {
+                data: ["2006","07","08","09","10","11","12","13","14","15"],
+                axisLine:{lineStyle:{color:'#f00'}},
+                axisTick:{show:false},
+                axisLabel:{textStyle:{color:'#55585a'}}
+            },
+            yAxis:{
+                position:'right',
+                inverse:true,
+                axisLine:{show:false},
+                axisTick:{show:false},
+                axisLabel:{textStyle:{color:'##55585a'}},
+                splitLine:{color:'#fff'}
+            },
+            series: [{
+                name: 'Population',
+                type: 'bar',
+                barGap:0,
+                data: [0.4,0.56,0.55,0.53,0.51,1.05,1.12,1.03,1.75,1.81]
+            },
+            {
+                name: 'GDP',
+                type: 'bar',
+                smooth:true,
+                symbol:'none',
+                data: [0.9,3.52,1.90,2.33,2.62,1.98,2.75,0.5,0.92,1]
+            }]
+
+	 	}
+	 	myChart.setOption(option);
+	 </script>
+</body>
+</html>
